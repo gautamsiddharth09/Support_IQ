@@ -273,8 +273,7 @@ function HomeClient({ email }: { email: string }) {
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl font-extrabold text-center text-zinc-900 mb-16 leading-tight"
             >
-              Why Businesses Choose
-              <span className="text-indigo-600">Support IQ</span>
+              Why Businesses Choose  <span className="text-indigo-600">Support IQ</span>
             </motion.h2>
 
             {/* Feature Cards */}
