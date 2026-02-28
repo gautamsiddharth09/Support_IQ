@@ -46,12 +46,13 @@
     zIndex: "99999",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
     fontFamily: "Inter, system-ui, sans-serif",
+     whiteSpace: "pre-wrap"
   });
 
   box.innerHTML = `
     <div style="background:#000; color:#fff; padding:12px 14px; font-size:14px; display:flex; justify-content:space-between; align-items:center;">
-       <span>Customer Support</span>
-       <span id="chat-close" style="cursor:pointer;font-size:16px">✕</span>
+      <span >Customer Support</span>
+       <span id="chat-close" style="cursor:pointer;font-size:16px;">✕</span>
     </div>
     <div id="chat-messages" style="flex:1; padding:12px; overflow-y:auto; background:#f9fafb; display:flex; flex-direction:column;"></div>
     <div style="display:flex; border-top:1px solid #e5e7eb; padding:8px; gap:6px;">

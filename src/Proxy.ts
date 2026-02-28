@@ -13,9 +13,10 @@ export async function middleware(req: NextRequest) {
   try {
     await scalekit.validateToken(token);
     return NextResponse.next();
-  } catch {
+  } catch(error) {
+     console.log("Token validation error:", error);
     const response = NextResponse.redirect(new URL("/login", req.url));
-    response.cookies.delete("access_token"); // ✅ allowed here
+    response.cookies.delete("access_token"); 
     return response;
   }
 }

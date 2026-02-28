@@ -5,7 +5,7 @@ export async function GET() {
     new URL("/", process.env.NEXT_PUBLIC_APP_URL)
   );
 
-  response.cookies.delete("access_token"); // ✅ correct way
+  response.cookies.delete("access_token");
 
   return response;
 }
