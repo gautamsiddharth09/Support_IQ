@@ -1,5 +1,5 @@
 (function () {
-  const api_url = "https://vercel.com/gautamsiddharth09s-projects/support-iq/api/auth/callback/api/chat";
+  const api_url = "https://support-iq-five.vercel.app/api/chat";
   const scriptTag = document.currentScript;
   const ownerId = scriptTag.getAttribute("data-owner-id");
 
