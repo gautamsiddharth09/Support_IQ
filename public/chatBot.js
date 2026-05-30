@@ -46,7 +46,6 @@
     zIndex: "99999",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
     fontFamily: "Inter, system-ui, sans-serif",
-     whiteSpace: "pre-wrap"
   });
 
   box.innerHTML = `

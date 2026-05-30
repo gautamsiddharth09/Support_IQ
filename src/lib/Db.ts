@@ -3,7 +3,7 @@ import mongoose, { Connection } from "mongoose";
 const mongo_url = process.env.MONGODB_URL;
 
 if (!mongo_url) {
-  console.error("MONGO_URL not found");
+  throw new Error("MONGO_URL not found"); //throw instead of console
 }
 
 let cache = global.mongoose as {
@@ -15,29 +15,29 @@ if (!cache) {
   cache = global.mongoose = { conn: null, promise: null };
 }
 
-const connectDb = async (): Promise<Connection | null> => {
+const connectDb = async (): Promise<Connection> => {
   if (cache.conn) {
-    // Return cached connection
-    return cache.conn; 
+    return cache.conn;
   }
 
   if (!cache.promise) {
     cache.promise = mongoose
-      .connect(mongo_url!)
-      .then(m => m.connection);
+      .connect(mongo_url)
+      .then((m) => m.connection);
   }
 
   try {
     cache.conn = await cache.promise;
   } catch (error) {
+    cache.promise = null; 
     console.error("MongoDB connection error:", error);
+    throw error; 
   }
 
   return cache.conn;
 };
 
 export default connectDb;
-
 
 
 
