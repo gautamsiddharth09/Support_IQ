@@ -81,19 +81,6 @@ line-height:1.2;
 Customer Support
 </div>
 
-<div
-style="
-margin-top:4px;
-background:transparent !important;
-color:rgba(255,255,255,.75) !important;
-font-size:12px;
-font-weight:400;
-font-family:Inter,system-ui,sans-serif;
-line-height:1.4;
-">
-Typically replies instantly
-</div>
-
 </div>
 
 <button
