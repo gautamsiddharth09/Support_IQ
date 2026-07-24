@@ -149,7 +149,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
             <textarea
               value={knowledge}
               onChange={(e) => setKnowledge(e.target.value)}
-              className="w-full min-h-[180px] rounded-xl border border-zinc-300 px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black/80 transition"
+              className="w-full min-h-45 rounded-xl border border-zinc-300 px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black/80 transition"
               placeholder={`Example:
 • Refund policy: 7 days return available
 • Delivery time: 3–5 working days

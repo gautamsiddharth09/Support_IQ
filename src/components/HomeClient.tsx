@@ -83,7 +83,7 @@ function HomeClient({ email }: { email: string }) {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-white to-zinc-50 text-zinc-900 overflow-x-hidden">
+      <div className="min-h-screen bg-linear-to-br from-white to-zinc-50 text-zinc-900 overflow-x-hidden">
         {/* Navbar */}
         <motion.div
           initial={{ y: -50 }}
@@ -104,7 +104,7 @@ function HomeClient({ email }: { email: string }) {
             {email ? (
               <div className="relative" ref={popupRef}>
                 <button
-                  className="w-10 h-10 rounded-full bg-indigo-600 text-white text-sm font-medium 
+                  className="w-10 h-10 rounded-full bg-indigo-600 text-white font-medium 
                   flex justify-center items-center text-xl
                   hover:bg-indigo-700 transition-colors duration-300
                   cursor-pointer"
@@ -152,7 +152,7 @@ function HomeClient({ email }: { email: string }) {
           </div>
         </motion.div>
         {/* left */}
-        <section className="pt-32 pb-28 px-6 bg-gradient-to-b from-white to-zinc-50">
+        <section className="pt-32 pb-28 px-6 bg-linear-to-b from-white to-zinc-50">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
