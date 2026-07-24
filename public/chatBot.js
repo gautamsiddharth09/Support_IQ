@@ -52,41 +52,76 @@
   });
 
   box.innerHTML = `
-<div style="
-background:linear-gradient(135deg,#111827,#000);
-color:white;
+<div
+style="
+background:linear-gradient(135deg,#111827,#000000) !important;
+color:#ffffff !important;
 padding:16px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.08);
+box-sizing:border-box;
+flex-shrink:0;
 ">
 
-<div>
-<div style="font-size:15px;font-weight:600;">
+<div style="display:flex;flex-direction:column;background:transparent !important;">
+
+<div
+style="
+margin:0;
+padding:0;
+background:transparent !important;
+color:#ffffff !important;
+font-size:16px;
+font-weight:700;
+font-family:Inter,system-ui,sans-serif;
+line-height:1.2;
+">
 Customer Support
 </div>
 
-<div style="font-size:12px;opacity:.75;margin-top:2px;">
+<div
+style="
+margin-top:4px;
+background:transparent !important;
+color:rgba(255,255,255,.75) !important;
+font-size:12px;
+font-weight:400;
+font-family:Inter,system-ui,sans-serif;
+line-height:1.4;
+">
 Typically replies instantly
 </div>
 
 </div>
 
-<span
+<button
 id="chat-close"
+type="button"
 style="
-cursor:pointer;
-font-size:20px;
-width:32px;
-height:32px;
+appearance:none;
+-webkit-appearance:none;
+border:none;
+outline:none;
+background:rgba(255,255,255,.14) !important;
+color:#ffffff !important;
+width:34px;
+height:34px;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:50%;
-transition:.2s;
+cursor:pointer;
+font-size:18px;
+font-weight:600;
+padding:0;
+margin:0;
+flex-shrink:0;
+transition:.2s ease;
 ">
 ✕
-</span>
+</button>
 
 </div>
 
@@ -99,7 +134,9 @@ overflow-y:auto;
 display:flex;
 flex-direction:column;
 gap:10px;
-background:#f8fafc;
+background:#f8fafc !important;
+box-sizing:border-box;
+scroll-behavior:smooth;
 ">
 </div>
 
@@ -107,9 +144,11 @@ background:#f8fafc;
 style="
 padding:14px;
 display:flex;
+align-items:center;
 gap:10px;
-background:#fff;
+background:#ffffff !important;
 border-top:1px solid #e5e7eb;
+box-sizing:border-box;
 ">
 
 <input
@@ -118,36 +157,41 @@ type="text"
 placeholder="Type your message..."
 style="
 flex:1;
-height:44px;
-padding:0 14px;
+height:46px;
+padding:0 16px;
 border:1px solid #d1d5db;
 border-radius:12px;
-font-size:14px;
 outline:none;
-transition:.2s;
-background:#fff;
+background:#ffffff !important;
+color:#111827 !important;
+font-size:14px;
+font-family:Inter,system-ui,sans-serif;
+box-sizing:border-box;
 "/>
 
 <button
 id="chat-send"
+type="button"
 style="
-height:44px;
-padding:0 18px;
+height:46px;
+padding:0 20px;
 border:none;
 border-radius:12px;
-background:linear-gradient(135deg,#111827,#000);
-color:#fff;
+background:linear-gradient(135deg,#111827,#000000) !important;
+color:#ffffff !important;
 font-size:14px;
 font-weight:600;
+font-family:Inter,system-ui,sans-serif;
 cursor:pointer;
-transition:.2s;
+white-space:nowrap;
+box-shadow:0 8px 18px rgba(0,0,0,.18);
+transition:.2s ease;
 ">
 Send
 </button>
 
 </div>
 `;
-
   document.body.appendChild(box);
 
   // 3. Logic & Events
@@ -157,14 +201,14 @@ Send
   const closeBtn = box.querySelector("#chat-close");
 
   input.onfocus = () => {
-  input.style.borderColor = "#111827";
-  input.style.boxShadow = "0 0 0 3px rgba(17,24,39,.1)";
-};
+    input.style.borderColor = "#111827";
+    input.style.boxShadow = "0 0 0 3px rgba(17,24,39,.1)";
+  };
 
-input.onblur = () => {
-  input.style.borderColor = "#d1d5db";
-  input.style.boxShadow = "none";
-};
+  input.onblur = () => {
+    input.style.borderColor = "#d1d5db";
+    input.style.boxShadow = "none";
+  };
 
   button.onclick = () => {
     box.style.display = box.style.display === "none" ? "flex" : "none";

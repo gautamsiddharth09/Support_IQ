@@ -35,21 +35,25 @@ const Embed = ({ ownerId }: { ownerId: string }) => {
             onClick={() => navigate.push("/")}
             className="text-2xl font-bold tracking-tight cursor-pointer hover:opacity-80 transition-all"
           >
-            Support <span className="text-indigo-600 hover:text-indigo-700">AI</span>
+            Support{" "}
+            <span className="text-indigo-600 hover:text-indigo-700">AI</span>
           </div>
 
-      <button
-  onClick={() => navigate.back()}
-  className="flex items-center gap-2 px-4 py-2 rounded-full 
+          <button
+            onClick={() => navigate.back()}
+            className="flex items-center gap-2 px-4 py-2 rounded-full 
              bg-indigo-600 hover:bg-indigo-700 text-white 
              font-medium text-sm cursor-pointer
              border border-zinc-200
              transition-all duration-200 ease-in-out
              active:scale-95 shadow-sm hover:shadow-md"
->
-  <BsArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
-  <span>Back to Dashboard</span>
-</button>
+          >
+            <BsArrowLeft
+              size={18}
+              className="transition-transform group-hover:-translate-x-1"
+            />
+            <span>Back to Dashboard</span>
+          </button>
         </div>
       </motion.div>
 
