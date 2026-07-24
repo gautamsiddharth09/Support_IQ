@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     supportEmail - ${setting?.supportEmail?.trim() || "not provided"}
      knowledge - ${setting?.knowledge?.trim() || "not provided"}
     `;
-    
+
     const prompt = `
 You are a professional AI customer support assistant representing this business.
 
@@ -72,7 +72,33 @@ Return ONLY the final customer-facing response as plain text.
     });
 
     // cors origin allow
-    const response = NextResponse.json(res.text);
+    let answer = res.text || "";
+
+    answer = answer
+      // Remove markdown bold
+      .replace(/\*\*(.*?)\*\*/g, "$1")
+
+      // Remove bullet points
+      .replace(/^\s*[*\-•]\s*/gm, "")
+
+      // Remove markdown headings
+      .replace(/^#+\s*/gm, "")
+
+      // Remove excessive blank lines
+      .replace(/\n{2,}/g, "\n")
+
+      // Remove tabs
+      .replace(/\t/g, " ")
+
+      // Optional: convert new lines to spaces
+      .replace(/\n/g, " ")
+
+      // Remove multiple spaces
+      .replace(/\s{2,}/g, " ")
+
+      .trim();
+
+    const response = NextResponse.json(answer);
 
     response.headers.set("Access-Control-Allow-Origin", "*");
     response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
